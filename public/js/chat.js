@@ -61,7 +61,7 @@ $(function(){
 		
 		console.log(data);
 		
-		if(data.number === 0){
+		// if(data.number === 0){
 			console.log("connected to new room ")
 			showMessage("connected");
 
@@ -85,39 +85,39 @@ $(function(){
 					peopleInChat(data.number + 1);
 			
 			});
-		}
+		// }
 
-		else if(data.number === 1) {
+		// else if(data.number === 1) {
 
-			showMessage("personinchat",data);
+		// 	showMessage("personinchat",data);
 
-			loginForm.on('submit', function(e){
+		// 	loginForm.on('submit', function(e){
 
-				e.preventDefault();
+		// 		e.preventDefault();
 
-				name = $.trim(hisName.val());
-				alert(name)
-				if(name.length < 1){
-					alert("Please enter a nick name longer than 1 character!");
-					return;
-				}
+		// 		name = $.trim(hisName.val());
+		// 		alert(name)
+		// 		if(name.length < 1){
+		// 			alert("Please enter a nick name longer than 1 character!");
+		// 			return;
+		// 		}
 
-				if(name == data.user){
-					alert("There already is a \"" + name + "\" in this room!");
-					return;
-				}
+		// 		if(name == data.user){
+		// 			alert("There already is a \"" + name + "\" in this room!");
+		// 			return;
+		// 		}
 				
-				welcomeModal.modal("hide");
+		// 		welcomeModal.modal("hide");
 
-				socket.emit('login', {user: name, avatar: email, id: id});
+		// 		socket.emit('login', {user: name, avatar: email, id: id});
 				
 
-			});
-		}
+		// 	});
+		// }
 
-		else {
-			showMessage("tooManyPeople");
-		}
+		// else {
+		// 	showMessage("tooManyPeople");
+		// }
 
 	});
 
